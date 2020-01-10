@@ -5,8 +5,7 @@
  * @format
  * @flow
  */
-
-import React from 'react';
+import React, { Component } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -23,19 +22,53 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import OneSignal from 'react-native-onesignal'; // Import package from node modules
+const ONESIGNAL_APPID = '74202442-f2e4-467f-b4f6-76fc30ca9339';
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-      <View>
-          <Text>Start in mobile...222..</Text>
-      </View>
-      </SafeAreaView>
-    </>
-  );
-};
+class App extends Component {
+
+constructor(properties) {
+    super(properties);
+    OneSignal.init(ONESIGNAL_APPID);
+
+    OneSignal.addEventListener('received', this.onReceived);
+    OneSignal.addEventListener('opened', this.onOpened);
+    OneSignal.addEventListener('ids', this.onIds);
+  }
+
+  componentWillUnmount() {
+    OneSignal.removeEventListener('received', this.onReceived);
+    OneSignal.removeEventListener('opened', this.onOpened);
+    OneSignal.removeEventListener('ids', this.onIds);
+  }
+
+  onReceived(notification) {
+    console.log("Notification received: ", notification);
+  }
+
+  onOpened(openResult) {
+    console.log('Message: ', openResult.notification.payload.body);
+    console.log('Data: ', openResult.notification.payload.additionalData);
+    console.log('isActive: ', openResult.notification.isAppInFocus);
+    console.log('openResult: ', openResult);
+  }
+
+  onIds(device) {
+    console.log('Device info: ', device);
+  }
+  render(){
+    return (
+      <>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView>
+        <View>
+            <Text>Start in mobile..READY..</Text>
+        </View>
+        </SafeAreaView>
+      </>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   scrollView: {
