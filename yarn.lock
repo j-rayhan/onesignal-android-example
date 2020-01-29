@@ -5023,6 +5023,11 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
+react-native-alarm@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-alarm/-/react-native-alarm-1.2.0.tgz#058fb0370e95a670d7aceb58bec515082101a13b"
+  integrity sha1-BY+wNw6VpnDXrOtYvsUVCCEBoTs=
+
 react-native-onesignal@^3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/react-native-onesignal/-/react-native-onesignal-3.6.1.tgz#301a5849ee3bab2e297980d8aa293a61263e038e"

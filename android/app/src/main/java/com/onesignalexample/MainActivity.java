@@ -1,7 +1,7 @@
 package com.onesignalexample;
 
 import com.facebook.react.ReactActivity;
-
+import com.liang.RNAlarmPackage;
 public class MainActivity extends ReactActivity {
 
   /**
