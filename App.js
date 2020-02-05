@@ -23,21 +23,23 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import OneSignal from 'react-native-onesignal'; // Import package from node modules
-import RNAlarm from 'react-native-alarm';
+// import RNAlarm from 'react-native-alarm';
+import AppLauncher from 'react-native-app-launcher'
 
 const ONESIGNAL_APPID = '74202442-f2e4-467f-b4f6-76fc30ca9339';
+const date = new Date();
+AppLauncher.setAlarm("i1425d", '1580318249382');
 
-
-RNAlarm.setAlarm(Date.parse("2020-01-29T15:59:27.833Z").toString(),
-'Meeting with customer',
-'', 
-'',
-() => {
-console.log("Event triggered");
-},
-() => {
-console.log("Event trigger Failed");
-});
+// RNAlarm.setAlarm(Date.parse("2020-01-29T15:59:27.833Z").toString(),
+// 'Meeting with customer',
+// '', 
+// '',
+// () => {
+// console.log("Event triggered");
+// },
+// () => {
+// console.log("Event trigger Failed");
+// });
 
 class App extends Component {
 
