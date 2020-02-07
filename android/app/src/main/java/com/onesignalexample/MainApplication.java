@@ -8,8 +8,11 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
+
+// import java.util.Arrays;
 import java.util.List;
-import io.cmichel.appLauncher.LauncherPackage;  // add this for react-native-app-launcher
+
+// import io.cmichel.appLauncher.LauncherPackage;  // add this for react-native-app-launcher
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -26,7 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          packages.add(new LauncherPackage()); // add this for react-native-app-launcher
+          // packages.add(new LauncherPackage()); // add this for react-native-app-launcher
 
           return packages;
         }
