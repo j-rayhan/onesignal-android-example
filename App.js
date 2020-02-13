@@ -84,7 +84,8 @@ class App extends Component {
   handleStop = () => {
     console.log('PRINT IN %s=====>', 'Stop');
     AppLauncher.clearAlarm('1');
-    this.handlePause();
+    // this.handlePause();
+    song = null;
     BackHandler.exitApp();
   };
   render() {
